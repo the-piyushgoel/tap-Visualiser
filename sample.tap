@@ -1,4 +1,4 @@
 TAP version 13
-ok 1 should add numbers correctly
+ok 1 should add numbers
 not ok 2 should subtract numbers
 ok 3 should multiply numbers

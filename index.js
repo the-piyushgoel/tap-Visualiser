@@ -1,18 +1,34 @@
-const fs = require("fs");
+const fs = require("fs"); // file read karne ke liye
 
 function parseTAP(data) {
-    const lines = data.split("\n");
+    const lines = data.split("\n"); // har line alag
+
     const tests = [];
 
     for (let line of lines) {
-        line = line.trim();
+        line = line.trim(); // extra spaces hatao
 
+        // sirf useful lines lo
         if (line.startsWith("ok") || line.startsWith("not ok")) {
+
             const parts = line.split(" ");
 
-            let status = parts[0] === "ok" ? "ok" : "not ok";
-            let id = parts[1];
-            let name = parts.slice(2).join(" ");
+            let status;
+            let id;
+            let name;
+
+            // case 1: ok
+            if (parts[0] === "ok") {
+                status = "ok";
+                id = parts[1];
+                name = parts.slice(2).join(" ");
+            } 
+            // case 2: not ok
+            else {
+                status = "not ok";
+                id = parts[2];
+                name = parts.slice(3).join(" ");
+            }
 
             tests.push({
                 id: Number(id),
@@ -25,7 +41,7 @@ function parseTAP(data) {
     return { tests };
 }
 
-// read file
+// file input
 const file = process.argv[2];
 
 if (!file) {
@@ -33,7 +49,11 @@ if (!file) {
     process.exit(1);
 }
 
+// file read
 const data = fs.readFileSync(file, "utf-8");
+
+// parse
 const result = parseTAP(data);
 
+// print
 console.log(JSON.stringify(result, null, 2));
