@@ -52,3 +52,21 @@ const result = parseTAP(data);
 
 
 console.log(JSON.stringify(result, null, 2));
+
+function showChart(tests) {
+    console.log("\nBenchmark Results:\n");
+
+    for (let test of tests) {
+        let bar = "";
+
+        if (test.status === "ok") {
+            bar = "█████"; 
+        } else {
+            bar = "██";
+        }
+
+        console.log(`${test.name.padEnd(30)} ${bar}`);
+    }
+}
+
+showChart(result.tests);
