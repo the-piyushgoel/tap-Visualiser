@@ -9,3 +9,7 @@ A simple CLI tool to parse TAP (Test Anything Protocol) output and visualize res
 
 ## Usage
 node index.js sample.tap
+
+
+```markdown! [TAP results] (image.png)
+```
