@@ -11,5 +11,4 @@ A simple CLI tool to parse TAP (Test Anything Protocol) output and visualize res
 node index.js sample.tap
 
 
-```markdown! [TAP results] (image.png)
-```
+![TAP results](./image.png)
