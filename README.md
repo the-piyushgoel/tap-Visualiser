@@ -1,4 +1,4 @@
-# TAP Visualier
+# TAP Visualiser
 
 A simple CLI tool to parse TAP (Test Anything Protocol) output and visualize results.
 
