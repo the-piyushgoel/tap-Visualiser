@@ -23,7 +23,7 @@ visualizer.js
 
 ```bash
 node index.js sample.tap
-
+```
 
 ## Benchmark results
 
