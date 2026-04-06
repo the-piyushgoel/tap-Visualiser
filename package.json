@@ -1,12 +1,11 @@
 {
-  "name": "tap_visualizer",
+  "name": "tap-visualizer",
   "version": "1.0.0",
-  "description": "",
+  "description": "TAP parser and CLI visualizer",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js sample.tap"
   },
-  "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "MIT"
 }
