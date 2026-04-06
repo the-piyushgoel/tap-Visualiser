@@ -26,7 +26,8 @@ node index.js sample.tap
 ```
 
 ## Benchmark results
-
+```
 should add numbers         ████████████████████ 1
 should subtract numbers    ███ 0
 should multiply numbers    ████████████████████ 1
+```
