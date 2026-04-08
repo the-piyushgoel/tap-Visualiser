@@ -12,6 +12,12 @@ A simple CLI tool to parse TAP (Test Anything Protocol) output and visualize res
 
 TAP → Parser → Middleware → Visualizer
 
+## Advanced Features
+
+- YAML diagnostics parsing (rate, iterations, elapsed)
+- Middleware transformation layer
+- Sorted benchmark visualization
+
 ## 📦 Project Structure
 src/
 parser.js
@@ -27,7 +33,7 @@ node index.js sample.tap
 
 ## Benchmark results
 ```
-should add numbers         ████████████████████ 1
-should subtract numbers    ███ 0
-should multiply numbers    ████████████████████ 1
+should add numbers                  ██████████████████████████████ 1
+should multiply numbers             ██████████████████████████████ 1
+should subtract numbers             ░ 0
 ```

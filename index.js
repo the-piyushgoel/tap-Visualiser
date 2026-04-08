@@ -4,17 +4,25 @@ const parseTAP = require("./src/parser");
 const transformData = require("./src/transform");
 const showChart = require("./src/visualizer");
 
-const file = process.argv[2];
+const args = process.argv.slice(2);
 
-if (!file) {
-    console.log("Usage: node index.js sample.tap");
+if (args.length === 0) {
+    console.log("Usage: node index.js <file.tap>");
     process.exit(1);
 }
 
-const data = fs.readFileSync(file, "utf-8");
+const filePath = args[0];
 
-const parsed = parseTAP(data);
+try {
+    const data = fs.readFileSync(filePath, "utf-8");
 
-const transformed = transformData(parsed);
+    const parsed = parseTAP(data);
 
-showChart(transformed);
+    const transformed = transformData(parsed);
+
+  
+    showChart(transformed);
+
+} catch (err) {
+    console.error("Error:", err.message);
+}
