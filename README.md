@@ -19,10 +19,12 @@ TAP → Parser → Middleware → Visualizer
 - Sorted benchmark visualization
 
 ## 📦 Project Structure
+```
 src/
 parser.js
 transform.js
 visualizer.js
+```
 
 
 ## ▶️ Usage
